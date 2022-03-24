@@ -1,4 +1,4 @@
-body, h1,h2,h3,h4,h5,h6 {
+body, h1,h2 {
 	font-family: "Montserrat", 
 	sans-serif
 }
@@ -8,7 +8,7 @@ body, h1,h2,h3,h4,h5,h6 {
 }
 
 /* Set the width of the sidebar to 120px */
-.side-bar {
+#side-bar {
 	width: 120px;
 	background: #F1F1F1;
 }
