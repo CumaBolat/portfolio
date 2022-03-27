@@ -1,28 +1,29 @@
 class UsersController < ApplicationController
-	def new
-		@user = User.new
-	end
+  def new
+    @user = User.new
+  end
 
-	def create
+  def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      render 'new'
+      redirect_to login_url
     end
   end
 
   def show
-  	if User.exists?(params[:id])
-  		@user = User.find(params[:id])
-  	else
-  		redirect_to root_path
-  	end
+    if User.exists?(params[:id])
+      @user = User.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   def index
-  	@users = User.all
+    @users = User.all
   end
 
   private
