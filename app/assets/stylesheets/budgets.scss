@@ -1,3 +1,41 @@
 // Place all the styles related to the Budgets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+h1 {
+	text-align: center;
+}
+
+.text {
+	color: #72B7E8
+}
+
+html {
+	background-color: light-grey;
+	font-family: "Montserrat";
+}
+
+.table, th, td {
+  border: 1px;
+  text-color: white;
+}
+
+#desc-header, #desc-row{
+	text-align: left;
+}
+
+th, td {
+  border-style: inset;
+  text-align: center;
+}
+
+th {
+	background-color: #9C8878;
+}
+
+tr:hover {background-color: coral;}
+tr:nth-child(even) {background-color: #A2C29F;}
+tr:nth-child(odd) {background-color: #858C84;}
+
+
+

@@ -1,0 +1,27 @@
+<div class="current-budget">
+  <h1>Current Budget</h1>
+  <h1 class='text'> <%= current_budget(current_user) %> </h1>
+</div>
+
+<h1>Add to Budget</h1>
+
+<div class="row" align="center">
+  <div class="col-md-4 offset-4">
+    <%= form_with(model: @budget) do |f| %>
+    	<%= f.label :description %>
+      <%= f.text_field :description, class: 'mb-1 form-control' %>
+      
+      <%= f.label :amount %>
+      <%= f.number_field :amount, class: 'mb-1 form-control' %>
+
+      <%= f.select :income_or_expense, options_for_select([['Income', true], ['Expense', false]])%>
+
+      <%= f.submit "Add budget", class: "mt-2 btn btn-primary" %>
+    <% end %>
+    <%= flash[:success] %>
+  </div>
+</div>
+
+<div align="center">
+  <%= render 'index' %>
+</div>

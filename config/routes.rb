@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   resources :users
 
+  get '/budgets', to: 'budgets#new'
+
+  resources :budgets
+
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'

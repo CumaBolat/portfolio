@@ -1,0 +1,22 @@
+<h1>History</h1>
+<div class="table">
+  <table style="width:100%">
+    <thead>
+      <tr>
+        <th style="width:60%" id="desc-header">Description</th>
+        <th>Amount</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>    
+      <% @budgets.each do |budget| %>
+        <tr>
+          <td id="desc-row"><%= budget.description %></td>
+          <td><%= prefix_sign(budget) %> <%= budget.amount %></td>
+          <td><%= budget.created_at.strftime("%d %b. %Y") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @budgets %>
+</div>

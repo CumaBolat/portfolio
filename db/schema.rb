@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_25_102003) do
+ActiveRecord::Schema.define(version: 2022_03_27_201310) do
 
   create_table "budgets", force: :cascade do |t|
-    t.integer "current_budget"
-    t.integer "expense"
-    t.integer "income"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "description"
+    t.integer "amount"
+    t.boolean "income_or_expense"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
