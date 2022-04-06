@@ -12,5 +12,9 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  has_many :budgets
+  has_many :transactions
+
+  def user
+    self
+  end  
 end

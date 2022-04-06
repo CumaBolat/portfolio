@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   resources :users
 
-  get '/budgets', to: 'budgets#new'
+  get '/budgets', to: 'transactions#new'
 
-  resources :budgets
+  resources :transactions
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

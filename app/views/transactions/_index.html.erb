@@ -9,14 +9,14 @@
       </tr>
     </thead>
     <tbody>    
-      <% @budgets.each do |budget| %>
+      <% @transactions.each do |transaction| %>
         <tr>
-          <td id="desc-row"><%= budget.description %></td>
-          <td><%= prefix_sign(budget) %> <%= budget.amount %></td>
-          <td><%= budget.created_at.strftime("%d %b. %Y") %></td>
+          <td id="desc-row"><%= transaction.description %></td>
+          <td><%= prefix_sign(transaction) %> <%= transaction.amount %></td>
+          <td><%= transaction.created_at.strftime("%d %b. %Y") %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-  <%= will_paginate @budgets %>
+  <%= will_paginate @transactions %>
 </div>
