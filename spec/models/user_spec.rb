@@ -1,6 +1,8 @@
 RSpec.describe User do
   subject(:user) { build(:user) }
 
+  it { should have_many(:transactions) }
+
   describe 'validations' do
     specify do
       expect(user).to allow_value('dev@gariban.com').for(:email)

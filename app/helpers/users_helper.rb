@@ -1,11 +1,11 @@
 module UsersHelper
   def current_budget(user)
     total = 0
-    user.transactions.each do |b|
-      if b.income_or_expense
-        total += b.amount
+    user.transactions.each do |t|
+      if t.income_or_expense
+        total += t.amount
       else
-        total -= b.amount
+        total -= t.amount
       end
     end
     total

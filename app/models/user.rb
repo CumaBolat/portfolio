@@ -16,5 +16,5 @@ class User < ApplicationRecord
 
   def user
     self
-  end  
+  end
 end
