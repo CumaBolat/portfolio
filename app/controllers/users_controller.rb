@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    redirect_to login_url unless logged_in?
+
     if User.exists?(params[:id])
       @user = User.find(params[:id])
     else
