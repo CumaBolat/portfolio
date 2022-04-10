@@ -1,5 +1,5 @@
 RSpec.describe User do
-  subject(:user) { build(:user) }
+  let(:user) { create(:user) }
 
   it { should have_many(:transactions) }
 
