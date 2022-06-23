@@ -16,11 +16,21 @@ class UsersController < ApplicationController
 
   def show
     redirect_to login_url unless logged_in?
+    @user = User.find(session[:user_id])
+  end
 
-    if User.exists?(params[:id])
-      @user = User.find(params[:id])
+  def create_auth
+    @user = User.find(session[:user_id])
+    auth_number = rand(100000...999999)
+    @user.update(authentication_number: auth_number)
+  end
+
+  def auth_page
+    if params[:authentication_number] == User.find(session[:user_id]).authentication_number
+      redirect_to user_path(current_user)
     else
-      redirect_to login_url
+      flash[:success] = 'Invalid authentication number'
+      redirect_to create_auth_path
     end
   end
 
@@ -33,4 +43,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :email, :password)
   end
+
 end

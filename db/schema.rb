@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_06_111127) do
+ActiveRecord::Schema.define(version: 2022_06_22_214447) do
 
   create_table "transactions", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 2022_04_06_111127) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "private_profile?", default: true
+    t.integer "consumed_timestep"
+    t.integer "authentication_number"
   end
 
 end
