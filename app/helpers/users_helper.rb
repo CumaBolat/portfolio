@@ -10,4 +10,8 @@ module UsersHelper
     end
     total
   end
+
+  def auth_successfull?(user)
+    user.authentication_number == params[:user][:authentication_number]
+  end
 end
